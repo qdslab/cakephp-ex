@@ -51,7 +51,7 @@ pipeline {
                     openshift.withCluster() {
                         openshift.withProject() {
                             // create a new application from the templatePath
-                            openshift.newApp(templatePath)
+                            openshift.newApp(templateName)
                         }
                     }
                 } // script
