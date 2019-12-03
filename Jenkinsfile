@@ -1,5 +1,5 @@
 // path of the template to use
-def templatePath = 'https://github.com/qdslab/cakephp-ex/blob/master/openshift/templates/cakephp-mysql-persistent.json'
+def templatePath = 'https://github.com/qdslab/cakephp-ex/blob/master/openshift/templates/cakephp-mysql.yaml'
 // name of the template that will be created
 def templateName = 'cakephp-mysql-persistent'
 // NOTE, the "pipeline" directive/closure from the declarative pipeline syntax needs to include, or be nested outside,
@@ -51,7 +51,7 @@ pipeline {
                     openshift.withCluster() {
                         openshift.withProject() {
                             // create a new application from the templatePath
-                            openshift.newApp(templateName)
+                            openshift.newApp(templatePath)
                         }
                     }
                 } // script
